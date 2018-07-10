@@ -48,10 +48,6 @@
       <transition name="fade">
         <span v-if="childMap" id="close-icon" @click="handleCloseChildMap">&times;</span>
       </transition>
-      <div class="info-box" ref="infoBox" v-if="infoBox" :style="{ top: infoBox.top, left: infoBox.left }">
-        <h2>{{infoBox.title}}</h2>
-        <p>{{infoBox.content}}</p>
-      </div>
       <transition name="popIn" mode="out-in">
         <div v-if="counties && !childMap" class="parent-map" key="parent-map">
           <span class="tooltip" v-if="tooltip" :style="{top: tooltip.top, left: tooltip.left}">{{tooltip.text}}</span>
@@ -85,8 +81,15 @@
                          :mouseout="handleMouseOutParish"></svg-component>
         </div>
       </transition>
+      <transition name="slideUp">
+        <div class="info-box" ref="infoBox" v-if="infoBox" :style="{ top: infoBox.top, left: infoBox.left }">
+          <h2>{{infoBox.title}}</h2>
+          <p>{{infoBox.content}}</p>
+        </div>
+      </transition>
     </div> <!-- End Map Container -->
   </transition>
+
   </div> <!-- End #app -->
 
   <script src="js/script.js"></script>

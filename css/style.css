@@ -110,7 +110,7 @@ header {
   fill-opacity: 0.5;
 }
 #map-container .info-box {
-  position: absolute;
+  position: fixed;
 	width: calc(50vw - 40px);
   background-color: #fefefe;
   border: 1px solid #444;
@@ -129,6 +129,36 @@ header {
   margin: 0 -10px;
   padding: 10px;
 }
+
+@media (max-width: 460px) {
+	#map-container, .loading {
+		flex-direction: column;
+		justify-content: flex-start;
+		height: auto;
+	}
+	#map-container svg {
+	  height: auto;
+	}
+	#map-container .info-box {
+	  position: static;
+		width: 100%;
+		flex: 1 1 100%;
+	  background-color: #fefefe;
+	  border: 1px solid #444;
+	  border-radius: 0;
+	  color: #444;
+	  padding: 0 10px;
+	  animation: fadeIn .5s;
+	}
+	.slideUp-enter-active, .slideUp-leave-active {
+	  transition: opacity .5s, transform .5s;
+	}
+	.slideUp-enter, .slideUp-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	  opacity: 0;
+		transform: translateY(200px);
+	}
+}
+
 #close-icon {
 	position: absolute;
 	top: 20px;
