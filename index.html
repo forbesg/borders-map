@@ -31,7 +31,7 @@
                 @mouseenter="handleCountyTooltip(county.tooltip)"
                 @mouseout="handleCloseCountyTooltip"
                >
-               <a :href="county.href">
+               <a :href="county.href" :aria-label="county.tooltip">
                  <path
                    :fill="county.path.fill"
                    stroke="#444"
