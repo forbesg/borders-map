@@ -1,0 +1,194 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+* {
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.4em;
+}
+h4 {
+  font-size: 1.3em;
+}
+
+header {
+	height: 50px;
+	padding: 10px;
+	text-align: center;
+}
+
+.loading {
+
+}
+.loading svg {
+	width: 200px;
+}
+
+#map-container, .loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-height: calc(100vh - 50px);
+  max-width: 100vh;
+  margin: auto;
+}
+#map-container svg {
+	/*margin: 100px;*/
+  height: 100%;
+	width: 800px;
+	max-width: 100%;
+	margin:auto;
+}
+#map-container svg path {
+  fill-opacity: 1;
+  transition: all 0.5s;
+}
+#map-container svg path.hover {
+  fill-opacity: 0.5;
+}
+#map-container svg g a path {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#map-container svg g a:hover path {
+  fill-opacity: 0.5;
+}
+#map-container .info-box {
+  position: absolute;
+	width: calc(50vw - 40px);
+  background-color: #fefefe;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #444;
+  padding: 0 10px;
+  animation: fadeIn .5s;
+}
+#map-container .info-box h2 {
+  background-color: #444;
+  color: #fff;
+  margin: 0 -10px;
+  padding: 10px;
+}
+#map-container .info-box p {
+  margin: 0 -10px;
+  padding: 10px;
+}
+#close-icon {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	font-size: 2em;
+}
+.tooltip {
+  position: absolute;
+  background-color: #444;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2em;
+}
+
+/* County Map Styles */
+#map-container svg g {
+	stroke: #000;
+}
+#map-container svg g.roxburghshire {
+	fill: #2b9e73;
+}
+#map-container svg g.berwickshire {
+	fill: #5a7cd2;
+}
+#map-container svg g.selkirkshire {
+	fill: #e0e066;
+}
+#map-container svg g.peebleshire {
+	fill: #e06678;
+}
+
+
+@media (min-width: 650px) {
+	body {
+	  font-size: 16px;
+	}
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s, transform .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+	transform: scale(0.2);
+}
+.child-map.popIn-enter-active, .child-map.popIn-leave-active {
+  transition: opacity .5s, transform .5s;
+}
+.child-map.popIn-enter, .child-map.popIn-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+	transform: scale(0.2);
+}
