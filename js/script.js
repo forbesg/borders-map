@@ -148,6 +148,7 @@
       },
 
       handleMouseOutParish (e) {
+        console.log('out');
         this.infoBox = null
         e.target.removeAttribute('fill')
         e.target.removeAttribute('fill-opacity')

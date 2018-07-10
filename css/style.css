@@ -112,6 +112,7 @@ header {
 #map-container .info-box {
   position: fixed;
 	width: calc(50vw - 40px);
+	max-width: 400px;
   background-color: #fefefe;
   border: 1px solid #444;
   border-radius: 5px;
@@ -151,10 +152,10 @@ header {
 	  animation: fadeIn .5s;
 	}
 	.slideUp-enter-active, .slideUp-leave-active {
-	  transition: opacity .5s, transform .5s;
+		transition: opacity .5s, transform .5s;
 	}
 	.slideUp-enter, .slideUp-leave-to /* .fade-leave-active below version 2.1.8 */ {
-	  opacity: 0;
+		opacity: 0;
 		transform: translateY(200px);
 	}
 }
@@ -221,4 +222,12 @@ header {
 .child-map.popIn-enter, .child-map.popIn-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 	transform: scale(0.2);
+}
+
+.slideUp-enter-active, .slideUp-leave-active {
+	transition: opacity .5s, transform .5s;
+}
+.slideUp-enter, .slideUp-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity: 0;
+	transform: translateY(100px);
 }
