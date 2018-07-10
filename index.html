@@ -3,8 +3,9 @@
   <title>Map</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <meta name="description" content="An interactive map of the Scottish Border Counties and their Parishes">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </head>
 <body>
   <div id="app">
@@ -33,8 +34,8 @@
                  <path
                    :fill="county.path.fill"
                    stroke="#444"
-                     stroke-width="0.5"
-                     stroke-opacity="0.5"
+                   stroke-width="0.5"
+                   stroke-opacity="0.5"
                    :d="county.path.d"
                    fill-opacity="1"
                    fill-rule="evenodd"
