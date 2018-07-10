@@ -1,4 +1,5 @@
 (function () {
+  var uri = document.baseURI
 
   var SVGComponent = Vue.component('SVGComponent', {
     name: 'svg-component',
@@ -34,7 +35,7 @@
       }
     },
     mounted () {
-      fetch('https://forbesg.github.io/borders-map/data/counties.json').then(res => {
+      fetch('' + uri + 'data/counties.json').then(res => {
         return res.json()
       }).then(counties => {
         console.log(counties);
@@ -48,7 +49,7 @@
         // get selected map json svg data
         // Path based on 600 x 600 viewBox
         const county = e.target.parentNode.parentNode.getAttribute('data-tooltip')
-        const jsonUrl = `https://forbesg.github.io/borders-map/data/${county.toLowerCase()}.json`
+        const jsonUrl = `${uri}data/${county.toLowerCase()}.json`
 
         fetch(jsonUrl).then(res => {
           return res.json()
