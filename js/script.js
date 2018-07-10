@@ -38,10 +38,8 @@
       fetch('' + uri + 'data/counties.json').then(res => {
         return res.json()
       }).then(counties => {
-        console.log(counties);
         this.counties = counties
       })
-
     },
     methods: {
 
