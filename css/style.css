@@ -143,6 +143,7 @@ header {
 	#map-container .info-box {
 	  position: static;
 		width: 100%;
+		max-width: 100%;
 		flex: 1 1 100%;
 	  background-color: #fefefe;
 	  border: 1px solid #444;

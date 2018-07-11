@@ -9,56 +9,6 @@
 </head>
 <body>
   <div id="app">
-    <header>
-      <h2>The Border Counties</h2>
-    </header>
-    <loading-component v-if="loading"></loading-component>
-    <transition v-else name="fade" mode="out-in">
-    <div id="map-container">
-      <transition name="fade">
-        <span v-if="childMap" id="close-icon" @click="handleCloseChildMap">&times;</span>
-      </transition>
-      <transition name="popIn" mode="out-in">
-        <div v-if="counties && !childMap" class="parent-map" key="parent-map">
-          <span class="tooltip" v-if="tooltip" :style="{top: tooltip.top, left: tooltip.left}">{{tooltip.text}}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" sodipodi:docname="borders-colour-combine.svg" viewBox="0 0 600 600">
-            <g fill-opacity="1" fill-rule="evenodd" stroke="#ddd">
-             <g v-for="(county, index) in counties"
-                :fill="county.fill"
-                :data-tooltip="county.tooltip"
-                @click.prevent="handleSelectMap"
-                @mouseenter="handleCountyTooltip(county.tooltip)"
-                @mouseout="handleCloseCountyTooltip"
-               >
-               <a :href="county.href" :aria-label="county.tooltip">
-                 <path
-                   :fill="county.path.fill"
-                   stroke="#444"
-                   stroke-width="0.5"
-                   stroke-opacity="0.5"
-                   :d="county.path.d"
-                   fill-opacity="1"
-                   fill-rule="evenodd"
-                 ></path>
-               </a>
-             </g>
-            </g>
-          </svg>
-        </div>
-        <div v-else class="child-map" key="child-map">
-          <svg-component :child-map="this.childMap"
-                         :mouseover="handleMouseOverParish"
-                         :mouseout="handleMouseOutParish"></svg-component>
-        </div>
-      </transition>
-      <transition name="slideUp">
-        <div class="info-box" ref="infoBox" v-if="infoBox" :style="{ top: infoBox.top, left: infoBox.left }">
-          <h2>{{infoBox.title}}</h2>
-          <p>{{infoBox.content}}</p>
-        </div>
-      </transition>
-    </div> <!-- End Map Container -->
-  </transition>
 
   </div> <!-- End #app -->
 
