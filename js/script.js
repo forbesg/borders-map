@@ -160,7 +160,7 @@
       'svg-component': SVGComponent
     },
     template: `
-    <div>
+    <div style="height: 100%;">
       <loading-component v-if="loading"></loading-component>
       <transition v-else name="fade" mode="out-in">
         <div id="map-container">
